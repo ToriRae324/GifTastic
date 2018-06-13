@@ -2,3 +2,8 @@
     float: left;
     margin-right: 10px;
 }
+
+.gifImage {
+    border: solid 3px #17a2b8;
+    border-radius: 25px 50px;
+}
