@@ -32,7 +32,7 @@ $("#searchButton").on("click", function(event) {
 function displayMeme() {
     var meme = $(this).attr("name");
 
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + meme + "&api_key=wA3pNWYwAvLQPHR6rmf91QB6ctdGUQqc&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + meme + "&api_key=wA3pNWYwAvLQPHR6rmf91QB6ctdGUQqc&limit=10";
 
 
     $.ajax({
