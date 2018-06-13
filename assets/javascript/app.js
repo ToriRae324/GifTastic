@@ -1,7 +1,7 @@
 //  Variables
 
 //  Array of meme topics
-var topics = ["Doge" , "Forever Alone" , "Y U No" , "Philosoraptor" , "Challenge Accepted" , "Xzibit Yo Dawg" , "Grumpy Cat" , "Bye Felicia" , "All The Things" , "Business Cat" , "U Mad"];
+var topics = ["Doge" , "Forever Alone" , "Success Cat" , "Challenge Accepted" , "Yo Dawg" , "Grumpy Cat" , "Bye Felicia" , "All The Things" , "U Mad"];
 
 
 
@@ -17,14 +17,30 @@ function displayMeme() {
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + meme + "&api_key=wA3pNWYwAvLQPHR6rmf91QB6ctdGUQqc&limit=10";
 
     console.log(queryURL);
+
     $.ajax({
-        URL : queryURL,
+        url : queryURL,
         method : "GET"
     }).then(function(response){
         console.log(response);
-    });
 
-}
+        var results = response.data;
+
+        //  Loop for number of responses. Display data
+        for (var i = 0 ; i < results.length ; i++) {
+            var gifDiv = $("<div class='gif'>");
+            var rating = results[i].rating;
+            var p = $("<p>").text("Rating: " + rating);
+            var gifImage = $("<img>");
+            gifImage.attr("src", results[i].images.fixed_height.url);
+
+            gifDiv.prepend(p);
+            gifDiv.prepend(gifImage);
+
+            $("#images").prepend(gifDiv);
+        }
+    });
+};
 
 //  Create and Render Buttons from topics array
 function renderButtons () {
