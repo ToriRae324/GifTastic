@@ -12,37 +12,49 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 </head>
 <body>
     
     <div class="container">
         <div class="row">
-            <div class="col-md-12" id="topics">
-                    
-            </div>
-        </div>
-        <hr>
 
-        <div class="row">
-            <div class="col-md-9" id="images">
-                <!-- Images Go Here -->
-            </div>
-
-            <div class="col-md-3">
+            <!-- Search Box Form -->
+            <div class="col-md-2">
                 <div class="form-group">
                     <form>
                     <label class="col-form-label" for="searchBox">GIF Your Meme</label>
                     <input class="form-control" type="text" id="searchBox">
-
                     <input type="submit" id="searchButton" value="Add Meme">
-                    <!-- <button type="button" class="btn btn-outline-info" id= "searchButton">Add Meme</button> -->
                     </form>
+                </div>
+            </div>
+
+            <!-- Topics Area -->
+            <div class="col-md-10" id="topics">
+                <!-- Topic Buttons Go Here -->
+            </div>
+        </div>
+        <hr>
+
+        <!-- Content and Images Area -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3><i class="fas fa-play-circle"></i>Click GIF to play or pause the action</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12" id="images">
+                        <!-- Images Go Here -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 
 
     <!-- JavaScript Link -->
