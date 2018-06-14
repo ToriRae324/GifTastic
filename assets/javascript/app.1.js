@@ -1,43 +1,38 @@
 //  Variables
 
-//  Array of meme topics
-var topics = ["Doge" , "Forever Alone" , "Success Cat" , "Challenge Accepted" , "Yo Dawg" , "Grumpy Cat" , "Bye Felicia" , "All The Things" , "U Mad"];
-
-
-
 //  Array of transport topics
 var topics2 = ["Bicycle" , "Skateboard" , "Motorcycle" , "Skates" , "Bus" , "Truck" , "Boat" , "Plane" , "Train"];
 
 
 //  Functions
 
-//  Create and Render Buttons from meme topics array
-function renderButtons () {
-    $("#topics").empty();
-    for (var i = 0 ; i < topics.length; i++) {
-        var meme = $("<button>");
-        meme.addClass("btn btn-info btn-lg meme");
-        meme.attr("name", topics[i]);
-        meme.text(topics[i]);
-        $("#topics").prepend(meme);
+//  Create and Render Buttons from transport topics array
+function renderButtons2 () {
+    $("#transportTopics").empty();
+    for (var i = 0 ; i < topics2.length; i++) {
+        var transport = $("<button>");
+        transport.addClass("btn btn-warning btn-lg transport");
+        transport.attr("name", topics2[i]);
+        transport.text(topics2[i]);
+        $("#transportTopics").prepend(transport);
     };
 }
 
-// Add new meme from user input in search box
-$("#searchButton").on("click", function(event) {
+// Add new transport from user input in search box
+$("#searchButton2").on("click", function(event) {
     event.preventDefault();
-    var newMeme = $("#searchBox").val().trim();
-    topics.push(newMeme);
-    renderButtons();
-    $("#searchBox").val("");
+    var newTransport = $("#searchBox2").val().trim();
+    topics2.push(newTransport);
+    renderButtons2();
+    $("#searchBox2").val("");
 
 })
 
 // Show GIF for button clicked
-function displayMeme() {
-    var meme = $(this).attr("name");
+function displayTransport() {
+    var transport = $(this).attr("name");
 
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + meme + "&api_key=wA3pNWYwAvLQPHR6rmf91QB6ctdGUQqc&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + transport + "&api_key=wA3pNWYwAvLQPHR6rmf91QB6ctdGUQqc&limit=10";
 
 
     $.ajax({
@@ -54,15 +49,15 @@ function displayMeme() {
                 var gifDiv = $("<div class='gif'>");
                 var rating = results[i].rating;
                 var p = $("<p>").text("Rating: " + rating);
-                var gifImage = $("<img class='gifImage'>");
+                var transportImage = $("<img class='transportImage'>");
 
-                gifImage.attr("src" , results[i].images.fixed_height_still.url);
-                gifImage.attr("data-still", results[i].images.fixed_height_still.url);
-                gifImage.attr("data-animate", results[i].images.fixed_height.url);
-                gifImage.attr("data-state" , "still");
+                transportImage.attr("src" , results[i].images.fixed_height_still.url);
+                transportImage.attr("data-still", results[i].images.fixed_height_still.url);
+                transportImage.attr("data-animate", results[i].images.fixed_height.url);
+                transportImage.attr("data-state" , "still");
 
                 gifDiv.prepend(p);
-                gifDiv.prepend(gifImage);
+                gifDiv.prepend(transportImage);
 
                 $("#images").prepend(gifDiv);
             }
@@ -71,7 +66,7 @@ function displayMeme() {
 };
 
 //  Function to toggle gif pause/play on .gif click
-$(document).on("click", ".gifImage", function() {
+$(document).on("click", ".transportImage", function() {
     var state = $(this).attr("data-state");
 
     if (state === "still") {
@@ -83,6 +78,8 @@ $(document).on("click", ".gifImage", function() {
       }
 });
 
+
+// Main topic buttons
 $("#memeButton").on("click", function() {
     $("#memeTopicsRow").css("display", "flex");
     $("#transportTopicsRow").hide();
@@ -102,8 +99,6 @@ $("#foodsButton").on("click", function() {
 })
 
 
+$(document).on("click", ".transport", displayTransport);
 
-
-$(document).on("click", ".meme", displayMeme);
-
-renderButtons()
+renderButtons2()

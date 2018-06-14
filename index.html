@@ -18,15 +18,33 @@
 <body>
     
     <div class="container">
-        <div class="row">
 
+        <!-- Title and Topic Buttons -->
+        <div class="row" id="topRow">
+            <div class="col-md-2">
+                <h1>GifTastic</h1>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-info btn-lg" id="memeButton">Memes</button>
+                <button type="button" class="btn btn-warning btn-lg" id="transportButton">Transports</button>
+                <button type="button" class="btn btn-success btn-lg" id="foodsButton">Foods</button>
+            </div>
+            <div class="col-md-6">
+                <!-- Empty Col -->
+            </div>
+        </div>
+        <hr>
+
+
+        <!-- Row for Meme Search and Topics -->
+        <div class="row" id="memeTopicsRow">
             <!-- Search Box Form -->
             <div class="col-md-2">
                 <div class="form-group">
                     <form>
                     <label class="col-form-label" for="searchBox">GIF Your Meme</label>
                     <input class="form-control" type="text" id="searchBox">
-                    <input type="submit" id="searchButton" value="Add Meme">
+                    <button type="submit" class="btn btn-outline-info" id="searchButton">Add Meme</button>
                     </form>
                 </div>
             </div>
@@ -36,7 +54,50 @@
                 <!-- Topic Buttons Go Here -->
             </div>
         </div>
-        <hr>
+        
+
+        <!-- Row for Transport Search and Topics -->
+        <div class="row" id="transportTopicsRow">
+            <!-- Search Box Form -->
+            <div class="col-md-2">
+                <div class="form-group">
+                    <form>
+                    <label class="col-form-label" for="searchBox2">GIF Your Transport</label>
+                    <input class="form-control" type="text" id="searchBox2">
+                    <button type="submit" class="btn btn-outline-warning" id="searchButton2">Add Transport</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Transport Topics Area -->
+            <div class="col-md-10" id="transportTopics">
+                <!-- Topic Buttons Go Here -->
+            </div>
+        </div>
+       
+
+
+
+        <!-- Row for Foods Search and Topics -->
+        <div class="row" id="foodsTopicsRow">
+                <!-- Search Box Form -->
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <form>
+                        <label class="col-form-label" for="searchBox3">GIF Your Food</label>
+                        <input class="form-control" type="text" id="searchBox3">
+                        <button type="submit" class="btn btn-outline-success" id="searchButton3">Add Food</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Transport Topics Area -->
+                <div class="col-md-10" id="foodsTopics">
+                    <!-- Topic Buttons Go Here -->
+                </div>
+            </div>
+            
+
 
         <!-- Content and Images Area -->
         <div class="row">
@@ -54,10 +115,13 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 
     <!-- JavaScript Link -->
     <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/app.1.js"></script>
+    <script src="assets/javascript/app.2.js"></script>
 </body>
 </html>
