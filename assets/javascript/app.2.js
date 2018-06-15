@@ -1,7 +1,7 @@
 //  Variables
 
 //  Array of foods topics
-var topics3 = ["Bacon" , "Carrots" , "Burgers" , "Salad" , "Rice" , "Pie" , "Cake" , "Steak"];
+var topics3 = ["Bacon" , "Carrots" , "Burgers" , "Salad" , "Pie" , "Cake" , "Steak"];
 
 
 //  Functions
